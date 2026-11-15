@@ -15,7 +15,7 @@ The 1.x quest log, back in WoW Forever: Era's own window and art, or the 3.x **d
   - le compteur **Quêtes : 16/40**.
 - **La page de la quête** : objectifs, temps restant, argent requis, description, **récompenses** (au choix, reçues, argent, expérience), avec leur infobulle et leur lien dans le chat (**Maj + clic**).
 - **Abandonner** : la confirmation du jeu, avec les objets que la quête emporte.
-- **Partager** : le bouton **Partager** du jeu est cliqué pour toi (le jeu interdit à un addon de partager une quête). Ce n'est pas possible en combat ni avec la carte ouverte, et un message le dit alors.
+- **Partager** : le bouton **Partager** du jeu est cliqué pour toi (le jeu interdit à un addon de partager une quête). Il est sur le panneau de quêtes de la carte : la carte s'ouvre, la quête est partagée et la carte se referme **dans le même clic**, sans jamais s'afficher, et l'on peut partager quête après quête. Ce n'est pas possible en combat ni avec la carte déjà ouverte, et un message le dit alors.
 - **La fenêtre** :
   - elle se **déplace** par son haut et s'**agrandit ou se réduit** en glissant la **poignée de son coin bas-droit** (toute la fenêtre à l'échelle, l'art garde ses proportions ; clic droit sur la poignée : sa taille d'origine) ; sa place et sa taille sont gardées ;
   - **Échap** la ferme, et la fenêtre d'un donneur de quêtes aussi, comme en 1.x.
@@ -42,7 +42,7 @@ The 1.x quest log, back in WoW Forever: Era's own window and art, or the 3.x **d
   - the **Quests: 16/40** count.
 - **The quest's page**: objectives, time left, required money, description, **rewards** (choices, items, money, experience), with their tooltip and chat link (**shift-click**).
 - **Abandon**: the game's own prompt, naming the items the quest takes with it.
-- **Share**: the game's own **Share** button is pressed for you (the game lets no addon share a quest). It cannot be done in combat or with the map open: a message then says so.
+- **Share**: the game's own **Share** button is pressed for you (the game lets no addon share a quest). It is on the map's quest panel: the map opens, the quest is shared and the map shuts **within the same click**, never drawn, quest after quest. It cannot be done in combat or with the map already open: a message then says so.
 - **The window**:
   - it **moves** by its top and grows or shrinks by the **grip on its bottom right corner** (the whole window scaled, the art keeps its shape; right-click the grip: its first size); its place and size are kept;
   - **Escape** closes it, and so does a quest giver's window, as in 1.x.

@@ -4,7 +4,7 @@
 ## Notes-frFR: Le journal de quêtes 1.x (l'art d'Era), ou le double volet 3.x (activé par défaut), à la place du panneau de quêtes de la carte : ouvert par la touche du journal et son micro-bouton (WoW Forever). /cql
 ## Notes-deDE: Das 1.x-Questlog (Eras Grafik) oder die 3.x-Doppelansicht (standardmäßig an) statt des Questbereichs der Karte: geöffnet mit der Questlog-Taste und ihrem Mikroknopf (WoW Forever). /cql
 ## Author: Melbeline
-## Version: 1.0.0
+## Version: 1.0.1
 ## SavedVariables: ClassicQuestLogDB
 ## Category: Quests
 ## IconTexture: Interface\AddOns\ClassicQuestLog\media\UI-QuestLog-BookIcon

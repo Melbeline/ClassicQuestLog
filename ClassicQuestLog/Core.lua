@@ -507,12 +507,13 @@ end
 -- run, opens the map, its pane and the quest's header, presses the row, Share and Back, and shuts what was opened.
 -- The Aim steps are ours: each points the next clicks at what the game has just built.
 ---------------------------------------------------------------------------
-local STEPS = { "Open", "AimPane", "Pane", "AimHeader", "Header", "AimRow", "Row", "Share", "Back", "AimShut", "Shut" }
--- The row's click leaves the map on the quest's zone (and the game sorts the log for it): the map is opened and shut
--- once more at the end, which puts it back on the player's
-local ORDER = { "Open", "AimPane", "Pane", "AimHeader", "Header", "AimRow", "Row", "Share", "Back", "AimShut", "Shut", "Open",
-  "Open", "Open" }
-local AIMED = { "Pane", "Header", "Row", "Share", "Back", "Shut" }
+-- The map shut at the end by its own close button (the game's toggle does not always shut it: with its quest panel
+-- not as the player keeps it, it only hides that panel, and the map stayed open). The game puts the map back on the
+-- player's zone each time it opens. All in one press, in one script run: the map is never drawn.
+local STEPS = { "Open", "AimPane", "Pane", "AimHeader", "Header", "AimRow", "Row", "Share", "Back", "AimShut", "Shut",
+  "AimClose", "Close" }
+local ORDER = STEPS
+local AIMED = { "Pane", "Header", "Row", "Share", "Back", "Shut", "Close" }
 local proxies, macro
 local armedID
 local openedPane
@@ -580,14 +581,20 @@ local function AimShut()
   if MapUp() and openedPane and toggle then Aim("Shut", toggle.CloseButton) end
 end
 
-local AIMS = { AimPane = AimPane, AimHeader = AimHeader, AimRow = AimRow, AimShut = AimShut }
+-- The map, opened by this press, shut by its own close button
+local function AimClose()
+  local border = WorldMapFrame.BorderFrame
+  if MapUp() then Aim("Close", border and border.CloseButton or nil) end
+end
+
+local AIMS = { AimPane = AimPane, AimHeader = AimHeader, AimRow = AimRow, AimShut = AimShut, AimClose = AimClose }
 
 local function BuildShare()
   if proxies then return end
   proxies = {}
   local lines = {}
   for i, step in ipairs(STEPS) do
-    proxies[step] = Q.ClickProxy("ClassicQuestLogShare" .. i)
+    proxies[step] = Q.ClickProxy("CQLS" .. i)
     if AIMS[step] then proxies[step]:SetScript("PreClick", AIMS[step]) end
   end
   -- [nomod] on the map's own two: shift on a map row toggles tracking and the chat-link modifier links it

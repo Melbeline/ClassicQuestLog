@@ -9,7 +9,7 @@ The 1.x quest log, back in WoW Forever: Era's own window and art, or the 3.x **d
 - **La liste** :
   - les **catégories** se replient une à une, ou toutes avec l'onglet **Tout** (fenêtre 1.x) ;
   - les quêtes sont dans la **couleur de leur difficulté 1.x**, avec leur **étiquette** (Terminée, Élite, Donjon, Groupe, Journalière…) ;
-  - le **nombre de membres du groupe** qui l'ont (leurs noms dans l'infobulle) ;
+  - le **nombre de membres du groupe** qui l'ont (leurs noms entiers, prénom et nom, dans l'infobulle) ;
   - le **niveau** de la quête si le réglage du jeu l'affiche ;
   - une **coche** sur les quêtes suivies (**Maj + clic** ou **Suivre**) ;
   - le compteur **Quêtes : 16/40**.
@@ -36,7 +36,7 @@ The 1.x quest log, back in WoW Forever: Era's own window and art, or the 3.x **d
 - **The list**:
   - **headers** fold one by one, or all with the **All** tab (1.x window);
   - quests are in their **1.x difficulty color**, with their **tag** (Complete, Elite, Dungeon, Group, Daily…);
-  - the **number of party members** on each quest (their names in its tooltip);
+  - the **number of party members** on each quest (their whole names, first name and surname, in its tooltip);
   - the quest's **level** when the game's setting shows it;
   - a **check** on watched quests (**shift-click** or **Track**);
   - the **Quests: 16/40** count.

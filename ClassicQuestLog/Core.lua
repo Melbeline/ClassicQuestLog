@@ -21,6 +21,24 @@ function Q.Safe(v, fallback)
   if v == nil or issecret(v) then return fallback end
   return v
 end
+-- A unit's whole name as WoW Forever shows it, "First Surname", whatever the game's name settings hide (UnitName
+-- follows them, UnitNameUnmodified does not); nil when secret or none
+function Q.WholeName(unit)
+  local get = UnitNameUnmodified or UnitName
+  local ok, name, surname = pcall(get, unit)
+  if not ok or issecret(name) or type(name) ~= "string" or name == "" then
+    ok, name, surname = pcall(UnitName, unit)
+    if not ok or issecret(name) or type(name) ~= "string" or name == "" then return nil end
+  end
+  local toc = GetBuildInfo and select(4, GetBuildInfo()) or 0
+  if toc < 16000 or toc >= 20000 then return name end -- (elsewhere the second name is a realm)
+  local consts = Constants and Constants.CharacterNameSeparatorConsts
+  local sep = consts and type(consts.CHARACTERNAME_SURNAME_SEPARATOR) == "string" and consts.CHARACTERNAME_SURNAME_SEPARATOR or " "
+  if not issecret(surname) and type(surname) == "string" and surname ~= "" and not name:find(sep .. surname, 1, true) then
+    return name .. sep .. surname
+  end
+  return name
+end
 
 function Q.SayNotInCombat()
   if UIErrorsFrame and ERR_NOT_IN_COMBAT then UIErrorsFrame:AddMessage(ERR_NOT_IN_COMBAT, 1, 0.1, 0.1) end
@@ -494,8 +512,8 @@ function QL.PartyOnQuest(questID)
     local unit = "party" .. i
     local ok, on = pcall(C_QuestLog.IsUnitOnQuest, unit, questID)
     if ok and on == true then
-      -- (names are secret in dungeons: the unit's token then)
-      names[#names + 1] = Q.Safe(UnitName(unit), unit)
+      -- (whole: "First Surname"; names are secret in dungeons: the unit's token then)
+      names[#names + 1] = Q.WholeName(unit) or unit
     end
   end
   return names

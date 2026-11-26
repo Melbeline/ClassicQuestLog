@@ -58,3 +58,9 @@ The 1.x quest log, back in WoW Forever: Era's own window and art, or the 3.x **d
 - Settings are kept in `ClassicQuestLogDB`, for the whole account.
 
 The window's art is Era's own (1.x and 3.x quest log sheets), bundled in `media/`: the WoW Forever client's copies are near-black stand-ins.
+
+## 1.0.3
+
+- **Community fixes** (the same as Clara Combo Points', one copy running at a time): a community chat the game failed to join at the login joined again; the Guild & Communities window shows who is online in a community (the game's window never asked for its members' presence). Appear Offline on Battle.net still hides a player from the communities: the player's choice.
+
+- **Correctifs des communautés** (les mêmes que ceux de Clara Combo Points, une seule copie tourne à la fois) : un chat de communauté que le jeu n'a pas rejoint à la connexion est rejoint à nouveau ; la fenêtre Guilde & Communautés montre qui est en ligne dans une communauté (la fenêtre du jeu ne demandait jamais la présence de ses membres). « Apparaître hors ligne » sur Battle.net cache toujours un joueur des communautés : c'est son choix.
